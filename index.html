@@ -152,6 +152,286 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jsp1029" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/29/jsp1029/">jsp1029</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/29/jsp1029/" class="archive-article-date">
+  	<time datetime="2019-10-29T13:35:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JSP-Servlet"><a href="#JSP-Servlet" class="headerlink" title="JSP/Servlet"></a>JSP/Servlet</h1><h2 id="一、相同点："><a href="#一、相同点：" class="headerlink" title="一、相同点："></a>一、相同点：</h2><hr>
+<p>1 处理后台逻辑，作为mvc控制； </p>
+<p>2 9个内置对象(request、response、session、application、page、out、 config、pageContext、exception)，内置对象作用域：page &lt; request/response &lt; session &lt; application。</p>
+<p> page.setAttribute(“username”,”sam”); String id = page.getAttribute(“username”); request.setAttribute(“username”,”sam”); String id = request.getAttribute(“username”); session.setAttribute(“username”,”sam”); String id = session.getAttribute(“username”); application.setAttribute(“username”,”sam”); String id = application.getAttribute(“username”);</p>
+<p> 3 都可用Java语言。</p>
+<hr>
+<h2 id="二、不同点："><a href="#二、不同点：" class="headerlink" title="二、不同点："></a>二、不同点：</h2><ol>
+<li><p>JSP可作为前端显示页面，Servlet只能作后台控制；</p>
+<ol start="2">
+<li><p>JSP可内嵌html、EL、JSTL和Java，而Servlet只能有 Java；</p>
+</li>
+<li><p>JSP控制不需要项目中去注册、而Servlet必须注册(web.xml/注解)</p>
+</li>
+<li><p>JSP常作为小型项目，Servlet常用作框架类的大型项目；</p>
+</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h4 id="本堂课程知识要点-页面跳转-JSP-Servlet-jsp如何获取数据，并显示出来-out对象-。-作业：用提交表单数据到jsp的方式，实现登录功能。"><a href="#本堂课程知识要点-页面跳转-JSP-Servlet-jsp如何获取数据，并显示出来-out对象-。-作业：用提交表单数据到jsp的方式，实现登录功能。" class="headerlink" title="本堂课程知识要点 页面跳转 JSP Servlet jsp如何获取数据，并显示出来(out对象)。 作业：用提交表单数据到jsp的方式，实现登录功能。"></a>本堂课程知识要点 页面跳转 JSP Servlet jsp如何获取数据，并显示出来(out对象)。 作业：用提交表单数据到jsp的方式，实现登录功能。</h4><p>拓展：<br>Spring、SpringMVC(Struts2.0)、MyBatis SSM SpringBoot SpringCloud</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/29/jsp1029/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-jsp1028" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/29/jsp1028/">jsp1028</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/29/jsp1028/" class="archive-article-date">
+  	<time datetime="2019-10-29T13:25:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h2 id="一、JSP九大内置对象"><a href="#一、JSP九大内置对象" class="headerlink" title="一、JSP九大内置对象"></a>一、JSP九大内置对象</h2><ul>
+<li><p>（一）Request：客户端与服务器的一次请求中封装了用户提交的信息（包裹），该对象可以设置请求转 发request.getRequestDispatcher(String URL).forward(request,response)，是服务器行为，是一次请求， 所以页面的URL为原始请求处理的响应页面的URL（不是最终的处理请求的响应页面，因为客户端只请求 一次）。 </p>
+</li>
+<li><p>（二）Response：对客户的请求做出的响应，向客户端发送数据，该对象可以设置重定向 response.sendRedirect(String URL)，是客户端行为，是两次请求，所以页面的URL为二次请求处理的响 应页面的URL。 </p>
+</li>
+<li><p>（三）Session：该对象是客户端与服务器的一次会话，只要不关闭服务器的所有页面（离开这个服务 器），就只视为一次会话。Session在第一个JSP页面被装载时自动创建，完成会话期管理。当一个客户 首次访问服务器上的一个JSP页面时，JSP 引擎产生一个Session对象，同时分配一个String类型的ID号， JSP引擎同时将这换个ID号发送到客户端，存放在Cookie（要求服务器启用Cookie权限）中，这样 Session对象，直到客户关闭浏览器后，服务器端该客户的Session对象才取消，并且和客户的会话对应关 系消失。当客户重新打开浏览器再连接到该服务器时，服务器为该客户再重新创建一个新的Session对象 拥有新的ID号。常用方法为String getId()获取ID号以及Boolean isNew()判断是否是一个新的客户。 Session可以理解为线程私有的。 </p>
+</li>
+<li><p>（四）Application：服务器启动时产生，共享性。 </p>
+</li>
+<li><p>（五）Out：Out对象本质是一个输出流，用来向客户端输出数据。Out对象用于各种数据的输出。常用 方法为： out.print()：输出各种类型数据。 out.newLine()：输出一个换行符。 out.close()：关闭流。 </p>
+</li>
+<li><p>（六）Config：配置对象。 </p>
+</li>
+<li><p>（七）Page：页面。 </p>
+</li>
+<li><p>（八）PageContext：页面应用上下文环境。可通过该对象获取依赖于页面上下文环境的Node。</p>
+</li>
+<li><p>（九）Exception：只有在处理异常的网页中可以直接访问exception隐式对象。 </p>
+<h2 id="二、JSP七种传参方式"><a href="#二、JSP七种传参方式" class="headerlink" title="二、JSP七种传参方式"></a>二、JSP七种传参方式</h2></li>
+<li><p>（一）JavaBean：&lt;jsp:useBean id=”XXX” class=”JavaBean的全限定名(page+calssName)” scope=”session” /&gt; </p>
+</li>
+<li><p>（二）Session：session.setAttribute(String key,Object value)/seesion.getAttribute(String key) </p>
+</li>
+<li><p>（三）Application:application.setAttribute(String key,Object value)/application.getAttribute(String key) </p>
+</li>
+<li><p>（四）Request:<br>request.setParater(String key,String value)/request.getParater(String key) request.setAttribute(String key,Object value)/request.getAttribute(String key) </p>
+</li>
+<li><p>（五）JSP动作指令：&lt;jsp:forward/redirect page=”XXX.jsp”&gt; &lt;jsp:param name=”key-x” value=”value-x” /&gt; &lt;jsp:param name=”key-y” value=”value-y” /&gt; &lt;/jsp:forward/redirect&gt; </p>
+</li>
+<li><p>（六）Form表单：</p>
+<blockquote>
+<p> 用户操作 </p>
+</blockquote>
+</li>
+<li><p>（七）URL传参：URL.jsp?参数1 的key=参数1的value&amp; 参数n的key=参数n 的value </p>
+<h2 id="三、JSP四个作用域"><a href="#三、JSP四个作用域" class="headerlink" title="三、JSP四个作用域"></a>三、JSP四个作用域</h2></li>
+<li><p>（一）Application：共享、全局、服务器启动时产生，重启服务器销毁。可以包含很多个session。  </p>
+</li>
+<li><p>（二）Session：会话。隔离。生命周期是从用户发起链接服务器至彻底与服务器完全断开。可以包含很 多个request。所谓当前会话，就是指从用户打开浏览器开始，到用户关闭浏览器这中间的过程</p>
+</li>
+<li><p>（三）Request：有效域是当前请求周期。所谓请求周期，就是指从http请求发起，到服务器处理结束， 返回响应的整个过程。在这个过程中可能使用forward的方式跳转了多个jsp页面，在这些页面里你都可以 使用这个变量。 </p>
+</li>
+<li><p>（四）Page：有效域是当前页面，可以把参数放入PageContext中，只有跳转就失效。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/29/jsp1028/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-jsp1022" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/29/jsp1022/">jsp1022</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/29/jsp1022/" class="archive-article-date">
+  	<time datetime="2019-10-29T12:53:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="jsp"><a href="#jsp" class="headerlink" title="jsp"></a>jsp</h1><h2 id="实现登录功能"><a href="#实现登录功能" class="headerlink" title="实现登录功能"></a>实现登录功能</h2><h3 id="第一步-创建login-jsp登录页面"><a href="#第一步-创建login-jsp登录页面" class="headerlink" title="第一步: 创建login.jsp登录页面"></a>第一步: 创建login.jsp登录页面</h3><p>在所创建的动态项目his_v1中，于WebContent文件夹下创建login.jsp。其显示效果类似于下图:<br>对应源代码如下：<html> <body> <!-- 需要注意的是:xml配置文件中的url-pattern这里写的是/LoginServlet，而在jsp中form表单 的action写的是LoginServlet,而不是/LoginServlet。 --> <form action="LoginServlet" method="post"> <table> <tr> <td colspan="2">登录窗口</td> </tr> <tr> <td>用户名：</td> <td><input type="text" name="username"> </td> </tr> <tr> <td>密码：</td> <td><input type="password" name="password"> </td> </tr> <tr> <td colspan="2"><input type="submit" value="登录"> <a href="register.jsp">注册</a> </td> </tr> </table> </form> </body> </html> </p>
+<p>第二步：创建处理登录判定的Servlet:LoginServlet 在第一步中的login.jsp中，我们需要特别注意这句代码： <form action="LoginServlet" method="post"><br>这行代码中有两个属性，说明如下： </form></p>
+<ul>
+<li><p>action属性：点击登录按钮后，接下来的动作，这里是转到了LoginServlet。</p>
+</li>
+<li><p>method属性：表单中数据的提交方式。 接下来，再src文件夹下创建LoginServlet类，其中的doPost()方法参考代码如下：</p>
+<pre><code>/**   * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)   */  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {   // TODO Auto-generated method stub   request.setCharacterEncoding(&quot;utf-8&quot;);//设置request编码   response.setContentType(&quot;text/html;charset=utf-8&quot;);//设置response 编码   String id = request.getParameter(&quot;username&quot;);//获取表单用户名   String pwd = request.getParameter(&quot;password&quot;);//获取表单密码   if(pwd==null || pwd.equals(&quot;&quot;)){//若没有密码，或为空    response.getWriter().print(&quot;密码不能为空！&quot;);//在当前页面 (login.jsp)添加显示一句话。    return;//跳出doPost()方法，等待login.jsp页面再次提交表单。   }   if(id==null || id.equals(&quot;&quot;)){//若没有账号，或为空    response.getWriter().print(&quot;用户名不能为空！&quot;);//在当前页面 (login.jsp)添加显示一句话。    return;//跳出doPost()方法，等待login.jsp页面再次提交表单。   }   if(id.equals(&quot;sam&quot;) &amp;&amp; pwd.equals(&quot;123&quot;)) {//用户名、密码正确    request.getRequestDispatcher(&quot;welcome.jsp&quot;).forward(request, response);//页面转发    //页面跳转的方式：(1)转发：foward(地址栏地址不变);(2)重定向： redirect(地址栏地址变化)   }else//用户名、密码错误   {    response.getWriter().print(&quot;用户名或密码有误，请重新输 入！&quot;);//在当前页面(login.jsp)添加显示一句话。    return;//跳出doPost()方法，等待login.jsp页面再次提交表单。   }  } } </code></pre></li>
+</ul>
+<p>第三步：LoginServlet在项目配置文件web.xml中注册：\</p>
+<pre><code>  &lt;servlet&gt;&lt;/servlet&gt;  
+  &lt;servlet-name&gt;&lt;/servlet-name&gt;    
+ &lt;servlet-class&gt;&lt;/servlet-class&gt;   
+ &lt;servlet-mapping&gt;&lt;/servlet-mapping&gt;    
+ &lt;url-pattern&gt;&lt;/url-pattern&gt; 
+这五个都是注册一个servlet组件必须的节点 </code></pre><ol>
+<li><p>servlet 是用来注册Servlet的存放地址 servlet-name 这个是我们要注册servlet的名字 servlet-class 这个就 是指向我们要注册的servlet 的类地址, 要带包路径。</p>
+</li>
+<li><p>servlet-mapping 是用来配置我们注册的组件的访问路径 3. servlet-name 要与前面写的servlet的名字一致 4. url-pattern 配置这个组件的访问路径 5. 实例</p>
+<pre><code>接续第一步、第二步内容为例：
+ &lt;servlet&gt;
+    &lt;servlet-name&gt;LoginServlet&lt;/servlet-name&gt; &lt;servlet-class&gt;sam.his.servlet.LoginServlet&lt;/servlet-class&gt;  &lt;!--存放路径 --&gt;  
+ &lt;/servlet&gt;
+ &lt;servlet-mapping&gt; 
+   &lt;servlet-name&gt;LoginServlet&lt;/servlet-name&gt;  &lt;!-- 与上面的 &lt;servlet-name&gt; 要一致 --&gt;
+   &lt;url-pattern&gt;/LoginServlet&lt;/url-pattern&gt;  &lt;!-- 访问路径 --&gt; 
+ &lt;/servlet-mapping&gt; </code></pre><h4 id="第四步：实施登录"><a href="#第四步：实施登录" class="headerlink" title="第四步：实施登录"></a>第四步：实施登录</h4><p>注意：需要再添加一个登录成功页面welcome.jsp(参考第二步的doPost方法中代码)</p>
+<p>项目部署在tomcat服务器上，运行后在地址栏输入地址访问项目的login.jsp页面，表单中录入用户名、密码， 尝试登陆。</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/29/jsp1022/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jsp-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
