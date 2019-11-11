@@ -152,6 +152,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-第六篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/11/第六篇/">第六篇</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/11/第六篇/" class="archive-article-date">
+  	<time datetime="2019-11-11T07:26:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="（一）"><a href="#（一）" class="headerlink" title="（一）"></a>（一）</h3><p>在Eclipse中新建了一个Servlet，不过页面上报错：</p>
+<pre><code>Httpservlet cannot be resolved to a type，显然是Eclipse找不到相应的包，即javax.servlet。</code></pre><p>原因：</p>
+<p> jdk 里不包括servlet-api.jar 这个包，此包在Tomcat 中存在</p>
+<p>项目名–&gt; 右键</p>
+<p>Property–&gt; 选择</p>
+<p>Java Build Path–&gt; 选择</p>
+<p>Add External JARs–&gt; 选择</p>
+<p>把servlet-api.jar 的路径输入即可</p>
+<h3 id="（二）"><a href="#（二）" class="headerlink" title="（二）"></a>（二）</h3><p>&#160; &#160; &#160; &#160;javaweb项目中的WebRoot\WEB-INF文件夹下有一个xml文件，如果没有则需要项目工程师自己创建一个，一般命名为web.xml。在这个xml文件中有如下一段代码：</p>
+<p>&#160; &#160; &#160; &#160;这里面一共列出了6个文件名，在javaweb项目启动时，就会在项目目录下面自上而下逐一查找文件，如果找到了如上6个中的某一个文件，则以这个文件为welcom-file，也就是这个项目的默认页面。</p>
+<p>&#160; &#160; &#160; &#160;当然，这6个文件也有先后之分，比如说，没找到第一个名字的文件，继续查找，找到了第二个名字的文件后，后面4个就不再查找了。</p>
+<p>&#160; &#160; &#160; &#160;除此之外，还有博主曾经在自己项目中的xml文件中加入如下代码：</p>
+<blockquote>
+<p><welcome-file>student.html</welcome-file></p>
+</blockquote>
+<p>&#160; &#160; &#160; &#160;但是结果并不管用，项目无法将这个student.html文件设为默认页面。</p>
+<p>&#160; &#160; &#160; &#160;后来查询资料得知，设置项目的默认页面除了修改xml文件之外，还需要配置tomcat中的一个文件，这个文件的位置在tomcat服务器的目录文件中，具体位置为Servers\MyEclipse Tomcat v7.0-config\web.xml。这也是一个xml文件，博主在该文件的最后发现如下代码：</p>
+<p>&#160; &#160; &#160; &#160;也就是说使用这个tomcat服务器布置项目的话，你的启示页面就只能命名为index，而不能为student。如果想要修改，那么需要将项目下和tomcat中的xml文件都修改了。很多人都只注意到了自己项目下的xml文件，却忽略了tomact服务器里面的启示页面配置。</p>
+<p>版权声明：本文为CSDN博主「陆排的提鞋兵」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/qq_33323054/article/details/79511230" target="_blank" rel="noopener">https://blog.csdn.net/qq_33323054/article/details/79511230</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/11/第六篇/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-第五篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
